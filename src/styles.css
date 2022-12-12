@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+.list-group-item{
+    --bs-list-group-bg:transparent;
+    border-color: transparent !important
+
+}
+.fa-brands.fa-github.fa-2x:hover{
+    color:rgb(0, 0, 0);
+}
+.fa-brands.fa-facebook.fa-2x:hover{
+    color:rgb(20, 3, 118);
+}
+.fa-brands.fa-instagram.fa-2x:hover{
+    color:rgb(201, 15, 167);
+}
+.fa-brands.fa-facebook.fa-2x{
+    color:#343a40;
+}
+.fa-brands.fa-github.fa-2x{
+    color:#343a40;
+}
+.fa-brands.fa-instagram.fa-2x{
+    color:#343a40;
+}
+section.portada{
+    background-image: url(assets/img/fondo.jpg);
+    width: auto;
+    height: auto;
+    background-size: cover;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+
+}
+.accordion-button:not(.collapsed) {
+    color: #343a40;
+    background-color: #343a40;
+    box-shadow: inset 0 -1px 0 #00000020;
+
+}
+.bg-barras {
+    background-color: #2a012b !important
+}
+.bg-barras.soft {
+    background-color: #3a023bab !important
+}
+.ms-sw {
+    margin-left: .1rem !important
+}
+.me-sw {
+    margin-right: .1rem !important
+}
+.login {
+    height:   85vh !important
+
+}
+.formulario-login{
+    margin-top: 20%;
+}
+.link{
+    text-decoration: none;
+    color: black;
+
+}
+
+.textoSkl{
+             display: flex;
+         align-items: center;
+      
+}
+
+
+.backoffice {
+   height:   85vh !important
+   
+}

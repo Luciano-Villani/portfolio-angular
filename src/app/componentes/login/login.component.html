@@ -1,0 +1,63 @@
+
+    <app-navbar></app-navbar>
+    <section class="login"> 
+      <div class="container">
+        <div class="row">
+          <div class="col-2">
+            
+          </div>
+          <div class="col-8 formulario-login">
+            <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+              <div class="mb-3 mt-5">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="text" formControlName="username"
+                [ngClass]="{'is-invalid': Username?.errors && Username?.touched, 'is-valid': !Username?.errors && Username?.touched}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div *ngIf="Username?.errors && Username?.touched">
+                  <p *ngIf="Username?.hasError('requiered')" class="text-danger">El mail es requerido</p>
+                  <p *ngIf="Username?.hasError('email')" class="text-danger">Formato de email inválido</p>
+
+                </div>
+
+     
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+                <div *ngIf="Password?.errors && Password?.touched">
+                  <p *ngIf="Password?.hasError('requiered')" class="text-danger">Contraseña es requerida</p>
+                  <p *ngIf="Password?.errors?.['minlength']" class="text-danger">Contraseña inválida</p>
+
+                </div>
+              </div>
+             
+              <button type="submit" class="btn btn-secondary">Enviar</button>
+            </form>
+          
+            <!-- Modal ventana login-->
+      <!--<div class="modal-body formulario-login">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+      </div> -->
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal"><a  routerLink="/backoffice" style="color:rgb(251, 250, 250);"> Provisorio ruteo a BO</a></button>
+      </div>
+      <small>¿Áun no tenes una cuenta?<a routerLink="/registro"> Registrate</a></small>
+          </div>
+          <div class="col-2">
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <app-footer></app-footer>
+
+

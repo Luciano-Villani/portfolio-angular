@@ -1,0 +1,28 @@
+{
+	"RedesSociales": [{
+
+			"id": 1,
+			"urldestino": "https://github.com/Luciano-Villani",
+            "icon":"fa-github"
+		}, {
+			"id": 2,
+			"urldestino": "https://www.facebook.com/luciano.villani.58",
+            "icon":"fa-github"
+		},
+		{
+			"id": 3,
+			"urldestino": "https://www.instagram.com/luciano_villani_ok/",
+            "icon":"fa-instagram"
+		}
+	],
+
+
+
+	"acercaDe": [{
+		"id": 11,
+		"linea1": "Hola soy Luciano",
+		"linea2": "Co fundador de VisualDigital &",
+		"linea3": "GravityDraft",
+		"linea4": "Full Stack Developer Jr. de Argentina"
+	}]
+}
