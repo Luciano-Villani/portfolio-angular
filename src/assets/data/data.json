@@ -2,16 +2,16 @@
 	"RedesSociales": [{
 
 			"id": 1,
-			"urldestino": "https://github.com/Luciano-Villani",
+			"urlDestino": "https://github.com/Luciano-Villani",
             "icon":"fa-github"
 		}, {
 			"id": 2,
-			"urldestino": "https://www.facebook.com/luciano.villani.58",
+			"urlDestino": "https://www.facebook.com/luciano.villani.58",
             "icon":"fa-github"
 		},
 		{
 			"id": 3,
-			"urldestino": "https://www.instagram.com/luciano_villani_ok/",
+			"urlDestino": "https://www.instagram.com/luciano_villani_ok/",
             "icon":"fa-instagram"
 		}
 	],
