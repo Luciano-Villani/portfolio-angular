@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.datosPorfoio.obtenerDatos().subscribe(data=>{
       console.log(data);
-      this.misRedes=data.redesSociales;
+      this.misRedes=data.RedesSociales;
 
     });
   

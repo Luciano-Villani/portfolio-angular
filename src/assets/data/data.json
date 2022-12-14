@@ -18,11 +18,11 @@
 
 
 
-	"acercaDe": [{
+	"acercaDe": {
 		"id": 11,
 		"linea1": "Hola soy Luciano",
 		"linea2": "Co fundador de VisualDigital &",
 		"linea3": "GravityDraft",
 		"linea4": "Full Stack Developer Jr. de Argentina"
-	}]
+	}
 }
