@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosPorfolioService } from 'src/app/servicios/datosPorfolio.service';
+import { AcercaDeService } from 'src/app/servicios/acerca-de.service';
 
 @Component({
   selector: 'app-portada-acercade',
@@ -9,12 +9,12 @@ import { DatosPorfolioService } from 'src/app/servicios/datosPorfolio.service';
 export class PortadaAcercadeComponent implements OnInit {
   miAcercaDe:any;
 
-  constructor(private datosPorfoio:DatosPorfolioService) { }
+  constructor(private datosPorfoio:AcercaDeService) { }
 
   ngOnInit(): void {
     this.datosPorfoio.obtenerDatos().subscribe(data=>{
       console.log(data);
-      this.miAcercaDe=data.acercaDe;
+      this.miAcercaDe=data;
   });
 
 }
