@@ -10,10 +10,10 @@ export class ExperienciaComponent implements OnInit {
 
   miExperiencia:any;
 
-  constructor(private datosPorfoio:ExperienciaService) { }
+  constructor(private datosPorfolio:ExperienciaService) { }
 
   ngOnInit(): void {
-    this.datosPorfoio.obtenerDatos().subscribe(data=>{
+    this.datosPorfolio.obtenerDatos().subscribe(data=>{
       console.log(data);
       this.miExperiencia=data;
   });

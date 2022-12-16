@@ -4,17 +4,17 @@
   </div>
   <!-- Tarjetas proyectos -->
   <div class="row container-fluid mx-auto" style="background-color: #1E1C27 ;">
-    <div class="col-sm">
+    <div class="col-sm" *ngFor="let proyectos of misProyectos">
       <div class="card card-border mx-auto mt-5 mb-5" style="width: 400px;">
-        <img src="/assets/img/camugamming.jpg" class="card-img-top" alt="...">
+        <img src="{{ proyectos.img_src }}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">CamuGamming</h5>
-          <p class="card-text">Plataforma de juegos de ingenio desarrollada para la empresa Camuzzi Gas.</p>
-          <a href="http://gamming.visualdigital.com.ar/" target="_blank" class="btn btn-dark">Ver Más</a>
+          <h5 class="card-title">{{ proyectos.titulo }}</h5>
+          <p class="card-text">{{ proyectos.descripcion }}</p>
+          <a href="{{ proyectos.link_ver_mas }}" target="_blank" class="btn btn-dark">Ver Más</a>
         </div>
       </div>
     </div>
-  
+  <!-- 
     <div class="col-sm">
       <div class="card card-border mx-auto mt-5 mb-5" style="width: 400px;">
         <img src="/assets/img/artravel.jpg" class="card-img-top" alt="...">
@@ -36,5 +36,6 @@
         </div>
       </div>
     </div>
+    -->
   </div>
   
