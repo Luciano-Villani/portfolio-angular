@@ -5,61 +5,22 @@
     </div>
   </section>
   
-  <!-- Experiencia  -->
-  <section class="experiencia pb-5" style="background-color: #9A93B0;">
-    <div class="row row-cols-1 row-cols-md-4 g-4 px-5 p">
-      <div class="col">
-        <div class="card h-100">
-          <img src="assets/img/VD_transp.png" class="card-img-top mx-auto" alt="..." style="width: 200px">
-          <div class="card-body">
-            <h5 class="card-title">VisualDigital</h5>
-            <p class="card-text">Co fundador & Tech Lead. Empresa dedicada el desarrollo de soluciones interactivas para
-              promocionar marcas y productos.
-              Mis roles son muy abarcativos pero mi tarea central es el diseño funcional de las soluciones.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Período 2013 a la fecha</small>
-          </div>
+  <!-- Experiencias  -->
+  <section class="experiencia pb-5" style="background-color: #9A93B0;"> 
+    <div class="row row-cols-1 row-cols-md-4 g-4 px-5 " >
+    <div class="col" *ngFor="let experiencias of miExperiencia">
+      <div class="card h-100">
+        <img src="{{ experiencias.img_src}}" class="card-img-top  mx-auto" alt="..." style="width: 150px">
+        <div class="card-body">
+          <h5 class="card-title">{{ experiencias.titulo }}</h5>
+          <p class="card-text">{{ experiencias.descripcion }}</p>
+          
         </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="assets/img/logo-sia.png" class="card-img-top  mx-auto" alt="..." style="width: 150px">
-          <div class="card-body">
-            <h5 class="card-title">Sia Interactive</h5>
-            <p class="card-text">Tech Lead.</p>
-            <p class="card-text">Implementación de productos.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Período 2011 a 2013</small>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="assets/img/ceitech.jpg" class="card-img-top mx-auto" alt="..." style="width: 150px">
-          <div class="card-body">
-            <h5 class="card-title">CeiTech</h5>
-            <p class="card-text">IT Support Level 3 (T3/L3).</p>
-            <p class="card-text">Infraestructura TI.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Período 2009 a 2011</small>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="assets/img/Grupo-Schaeffler.png" class="card-img-top mx-auto" alt="..." style="width: 150px">
-          <div class="card-body">
-            <h5 class="card-title">Schaeffler Group</h5>
-            <p class="card-text">IT Support Level 1.</p>
-            <p class="card-text">Infraestructura TI.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Período 2007 a 2009</small>
-          </div>
+        <div class="card-footer">
+          <small class="text-muted">{{ experiencias.periodo }}</small>
         </div>
       </div>
     </div>
+    </div>
+
   </section>

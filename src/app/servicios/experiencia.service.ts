@@ -5,11 +5,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AcercaDeService {
+export class ExperienciaService {
   url:string="http://localhost:8080/"
 
   constructor(private http:HttpClient) { }
   obtenerDatos():Observable<any>{
-    return this.http.get<any>(this.url+"ver/informacion1")
+    return this.http.get<any>(this.url+"ver/experiencias")
 }
 }
+
