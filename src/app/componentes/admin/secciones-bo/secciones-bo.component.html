@@ -1,0 +1,679 @@
+<div class="col-3">
+    <h3 class="ms-3 mt-4">
+        Secciones
+    </h3>
+    <ul class="list-group">
+
+        
+<!--inicio redes modal-->
+<div class="modal fade" id="redes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sección redes sociales</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- inicio de formulario red en el modal -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-1">
+
+                        </div>
+                        <div class="col-10">
+                            <form [formGroup]="redesForm" (ngSubmit)="onEnviar($event)">
+                                <div class="mb-3" >
+                                    <label for="idRedsocial" class="form-label">ID</label>
+                                    <input type="url" formControlName="id" class="form-control" id="id" name="id"
+                                        aria-describedby="emailHelp">
+                                    <label for="urlRedsocial" class="form-label">Ingrese URL</label>
+                                    <input type="url" formControlName="urlDestino" class="form-control" id="urlDestino" name="urlDestino"
+                                        aria-describedby="emailHelp">
+                                        <label for="claseIcono" class="form-label">Ingrese clase de Icono (fontawesome)</label>
+                                    <input type="text" formControlName="icon" class="form-control" id="icon" name="icon"
+                                        aria-describedby="emailHelp">
+
+                                </div>
+                               
+                            </form>
+                        </div>
+                        <div class="col-1">
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button mb-2" class="btn btn-primary">Guardar cambios</button>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+                
+
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+        <!--inicio redes colapsable-->
+        <li class="list-group-item">
+            <a class="link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRedes"><i
+                    class="fa-solid fa-share-nodes"></i> Redes Sociales</a>
+            <span class="badge bg-dark rounded-pill ms-2">3</span>
+        </li>
+        
+       
+        <div class="collapse me-auto mb-auto" id="collapseRedes">
+            <div class="card card-body">
+                <li *ngFor="let redes of misRedesBO" class="list-group-item ">
+                    <a (click)="selecRed(redes)" class="link" href="#" data-bs-toggle="modal" data-bs-target=#redes><i
+                            class="fa-solid fa-briefcase"></i>{{redes.icon}}</a>
+                </li>
+                <li class="list-group-item">
+                    <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarRed">
+                        <i></i> + Agregar Red</a>
+                </li>
+            </div>
+        </div>
+       <!--fin redes colapsable-->
+       
+       <!-- inicio informacion --> 
+        <li  class="list-group-item">
+            <a (click)="selecInfo(miInformacionBO)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#informacion"><i
+                    class="fa-solid fa-circle-info"></i> Información</a>
+        </li>
+       <!--Inicio formulario información-->
+        <div class="modal fade" id="informacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Sección Información</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-1">
+        
+                                </div>
+                                <div class="col-10">
+                                    <form [formGroup]="infoForm" (ngSubmit)="onEnviar($event)">
+                                        <div class="mb-3">
+                                            <label for="info1" class="form-label">Ingrese texto linea 1</label>
+                                            <input type="text" class="form-control" formControlName="linea1" id="linea1" name="linea1" aria-describedby="emailHelp">
+        
+                                        </div>
+        
+                                        <div class="mb-3">
+                                            <label for="info2" class="form-label">Ingrese texto linea 2</label>
+                                            <input type="text" class="form-control" formControlName="linea2" id="linea2" name="linea2" aria-describedby="emailHelp">
+        
+                                        </div>
+        
+                                        <div class="mb-3">
+                                            <label for="info3" class="form-label">Ingrese texto linea 3</label>
+                                            <input type="text" class="form-control" formControlName="linea3" id="linea3" name="linea3" aria-describedby="emailHelp">
+        
+                                        </div>
+        
+        
+                                        <div class="mb-3">
+                                            <label for="info4" class="form-label">Ingrese texto linea 4</label>
+                                            <input type="text" class="form-control" formControlName="linea4" id="linea4" name="linea4"
+                                                aria-describedby="emailHelp">
+        
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                            <div class="col-1">
+        
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button mb-2" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        <button type="button" class="btn btn-warning">Actualizar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+        
+                </div>
+            </div>
+        
+        </div>
+<!--Fin formulario información-->
+
+        <li class="list-group-item">
+            <a class="link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseExperiencia"><i
+                    class="fa-solid fa-briefcase"></i> Experiencia</a>
+            <span class="badge bg-dark rounded-pill ms-2">4</span>
+        </li>
+        
+        <!--inicio experiencia colapsable-->
+        <div class="modal fade" id="experienciaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Editar experiencia</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="experienciaForm" (ngSubmit)="onEnviar($event)">
+    
+    
+                       
+                        <div class="mb-3">
+                            <label for="tituloExperienciaUno" class="form-label">Ingrese ID<span
+                                style="color:#9A93B0;"><em> ID actual 🡣 </em></span></label>
+                            <input type="text" formControlName="id" class="form-control" type="text" id="id" name="id">
+                        </div>
+                        <div class="mb-3">
+                            <label for="tituloExperienciaUno" class="form-label">Ingrese titulo<span
+                                style="color:#9A93B0;"><em> Titulo actual 🡣 </em></span></label>
+                            <input type="text" formControlName="titulo" class="form-control" type="text" id="titulo" name="titulo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="picExperienciaUno" class="form-label">Ingrese ruta de la imagen<span
+                                style="color:#9A93B0;"><em> ruta actual🡣 </em></span></label>
+                            <input type="text" formControlName="img_src" class="form-control" type="text" id="img_src" name="img_src">
+                        </div>
+                        <div class="mb-3 mt-4">
+                            <label for="experienciaUnoinfo1" class="form-label">Ingrese nombre de empresa o empleador<span
+                                    style="color:#9A93B0;"><em> Nombre actual 🡣</em></span></label>
+                            <input type="text" formControlName="descripcion" type="text" class="form-control" id="descripcion" name="descripcion" aria-describedby="emailHelp">
+                        </div>
+                        <p class="mb-3 mt-4"> Ingrese descripción<span style="color:#9A93B0;"><em> descripción actual 🡣</em></span></p>
+                        <div class="input-group mt-4">
+                            
+                            <span class="input-group-text">Descripción: </span>
+                            <textarea type="text" formControlName="descripcion" class="form-control" aria-label="detalleUno" id="descripcion" name="descripcion"></textarea>
+                        </div>
+                        <div class="mb-3 mt-4">
+                            <label for="periodoUno" class="form-label">Ingrese período<span style="color:#9A93B0;"><em> Período actual 🡣</em></span></label>
+                            <input type="text" formControlName="periodo" type="text" class="form-control" id="periodo" name="periodo" aria-describedby="emailHelp">
+                        </div>
+    
+                    </form>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Actualizar</button>
+                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="agregarExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Experiencia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="picAgregarExperiencia" class="form-label">Ingrese ruta de la imagen<span
+                            style="color:#9A93B0;"><em> Ej: assets/img/VD_transp.png</em></span></label>
+                        <input class="form-control" type="text" id="picAgregarExperiencia">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="agregarExperiencia" class="form-label">Ingrese nombre de empresa o empleador <span
+                                style="color:#9A93B0;"><em> Ej: VisualDigital</em></span></label>
+                        <input type="text" class="form-control" id="agregarExperiencia" aria-describedby="emailHelp">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">Ingrese descripción</span>
+                        <textarea class="form-control" aria-label="agregarDetalle"></textarea>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="agregarPeriodo" class="form-label">Ingrese período<span style="color:#9A93B0;"><em>
+                                    Ej:
+                                    2018 a 2021</em></span></label>
+                        <input type="text" class="form-control" id="agregarPeriodo" aria-describedby="emailHelp">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+                
+                <p style="color:#9A93B0;"><em> El archivo de la imagen debe subirse al servidor mediante FTP o admin de archivos del hosting, luego se especifica la ruta mediante el BO</em> </p>
+            </div>
+        </div>
+    </div>
+
+        <div class="collapse me-auto mb-auto" id="collapseExperiencia">
+            <div class="card card-body">
+                <li *ngFor="let experiencias of misExperienciasBO" class="list-group-item ">
+                    <a (click)="selecExp(experiencias)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#experienciaModal"><i
+                            class="fa-solid fa-briefcase"></i>{{ experiencias.titulo }}</a>
+                </li>
+                <li class="list-group-item">
+                    <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarExperiencia">
+                        <i></i> + Agregar Experiencia</a>
+                </li>
+            </div>
+        </div>
+        <!--fin experiencia colapsable-->
+
+         <!--inicio modal formación-->
+
+        <div class="modal fade" id="formacionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Sección Formación</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-1">
+    
+                                </div>
+                                <div class="col-10">
+                                    <form [formGroup]="formacionForm" (ngSubmit)="onEnviar($event)">
+                                        <div class="mb-3">
+                                            <label for="formacionUno" class="form-label">Ingrese Institución o curso</label>
+                                            <input type="text" class="form-control" formControlName="titulo" id="titulo" name="titulo"
+                                                aria-describedby="emailHelp">
+    
+                                        </div>
+    
+    
+                                        <div class="mb-3">
+                                            <label for="formacionUno" class="form-label">Ingrese detalle
+                                                <span style="color:#9A93B0;"><em> Información actual</em></span></label>
+                                            <input type="text" class="form-control" formControlName="descripcion" id="descripcion" name="descripcion"
+                                                aria-describedby="emailHelp">
+    
+                                        </div>
+                                         <div class="mb-3">
+                                            <label for="formacionUno" class="form-label">Ingrese nombre referencia para el menu</label>
+                                            <input type="text" class="form-control" formControlName="referencia" id="referencia" name="referencia"
+                                                aria-describedby="emailHelp">
+    
+                                        </div>
+                                    </form>
+    
+                                </div>
+                                
+                            </div>
+                            <div class="col-1">
+    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button mb-2" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Agregar formacion modal-->
+    <div class="modal fade" id="agregarFormacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar formación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-1">
+
+                            </div>
+                            <div class="col-10">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="agregarFormacion" class="form-label">Ingrese Institución o
+                                            curso<span style="color:#9A93B0;"><em> Ej: #YoProgramo</em></span></label>
+                                        <input type="text" class="form-control" id="agregarFormacion"
+                                            aria-describedby="emailHelp">
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="agregarDetalle" class="form-label">Ingrese detalle del titulo o
+                                            certificación<span style="color:#9A93B0;"><em> Ej: Segunda etapa de Argentina programa. Secretaría de Economía, Ministerio de Economía de la Nación.</em></span></label>
+                                        <input type="text" class="form-control" id="agregarDetalle"
+                                            aria-describedby="emailHelp">
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="agregarRefe" class="form-label">Ingrese nombre para el menu del BO<span style="color:#9A93B0;"><em> Una sola parabla sin espacios -- Ej: YoProgramo</em></span></label>
+                                        <input type="text" class="form-control" id="agregarRefe"
+                                            aria-describedby="emailHelp">
+
+                                    </div>
+                                </form>
+
+                                </div>
+                           
+                        </div>
+                        <div class="col-1">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button mb-2" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelarr</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!--inicio colapsable formación-->
+         <li class="list-group-item">
+            <a class="link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseFormacion"><i
+                    class="fa-sharp fa-solid fa-graduation-cap"></i> Formación</a>
+            <span class="badge bg-dark rounded-pill ms-2">4</span>
+        </li>
+
+
+       
+        <div class="collapse me-auto mb-auto" id="collapseFormacion">
+            <div class="card card-body">
+                <li class="list-group-item" *ngFor="let formacion of miFormacionBO">
+                    <a (click)="selecFormacion(formacion)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#formacionModal"><i
+                            class="fa-solid fa-graduation-cap"></i>{{ formacion.referencia }}</a>
+                </li>
+                <li>
+                <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarFormacion">
+                    <li class="list-group-item">
+                        <i></i> + Agregar formación            
+                </li>
+            </a>
+            </div>
+        </div>
+
+
+
+        <!--hard skills-->
+
+        <li class="list-group-item">
+            <a class="link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseHardskills"><i
+                    class="fa-solid fa-diagram-project"></i> Hard Skills</a>
+            <span class="badge bg-dark rounded-pill ms-2">3</span>
+        </li>
+
+        <div class="collapse me-auto mb-auto" id="collapseHardskills">
+            <div class="card card-body">
+                <li class="list-group-item" *ngFor="let hardskills of misHardskillsBO">
+                    <a (click)="selecHardSkill(hardskills)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#hardskillsModal"><i
+                            class="fa-solid fa-diagram-project"></i>{{hardskills.nombre}}</a>
+                </li>
+                <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarHardSkill">
+                    <li class="list-group-item">
+                        <i></i> + Agregar HardSkill            
+                     </li>
+                 </a>
+                
+                
+            </div>
+            
+            
+        </div>
+        <div class="modal fade" id="hardskillsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Sección Hard Skills</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-1">
+    
+                                </div>
+                                <div class="col-10">
+                                    <form [formGroup]="hardskillsForm" (ngSubmit)="onEnviar($event)">
+                                        <div class="mb-3">
+                                            <label for="hardskillnombre" class="form-label">Ingrese nombre de la habilidad</label>
+                                            <input type="text" class="form-control" formControlName="nombre" id="nombre" name="nombre"
+                                                aria-describedby="emailHelp">
+    
+                                        </div>
+    
+    
+                                        <div class="mb-3">
+                                            <label for="formacionUno" class="form-label">Ingrese porcentaje de progreso</label>
+                                            <input type="text" class="form-control" formControlName="porcentaje" id="porcentaje" name="porcentaje"
+                                                aria-describedby="emailHelp">
+    
+                                        </div>
+                                      
+                                    </form>
+    
+                                </div>
+                                
+                            </div>
+                            <div class="col-1">
+    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button mb-2" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Agregar hardskill modal-->
+    <div class="modal fade" id="agregarHardSkill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar HardSkill</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-1">
+
+                            </div>
+                            <div class="col-10">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="agregarHardSkill" class="form-label">Ingrese Nombre o habilidad</label>
+                                        <input type="text" class="form-control" id="agregarHardSkill"
+                                            aria-describedby="emailHelp">
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="agregarPorcentaje" class="form-label">Ingrese porcentaje de progreso</label>
+                                        <input type="text" class="form-control" id="agregarPorcentaje" aria-describedby="emailHelp">
+
+                                    </div>
+                     
+                                </form>
+
+                                </div>
+                           
+                        </div>
+                        <div class="col-1">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button mb-2" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelarr</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <!-- soft skills-->
+
+        <li class="list-group-item">
+            <a class="link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSoftskills"><i
+                    class="fa-solid fa-diagram-project"></i> Soft Skills</a>
+            <span class="badge bg-dark rounded-pill ms-2">3</span>
+        </li>
+
+        <div class="collapse me-auto mb-auto" id="collapseSoftskills">
+            <div class="card card-body">
+                <li class="list-group-item" *ngFor="let softskills of misSoftskillsBO">
+                    <a (click)="selecSoftSkill(softskills)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#softskillsModal"><i
+                            class="fa-solid fa-diagram-project"></i>{{softskills.nombre}}</a>
+                </li>
+                <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarSoftSkill">
+                    <li class="list-group-item">
+                        <i></i> + Agregar SoftSkill            
+                     </li>
+                 </a>
+                
+                
+            </div>
+        </div>
+        <div class="modal fade" id="softskillsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Sección Hard Skills</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-1">
+    
+                                </div>
+                                <div class="col-10">
+                                    <form [formGroup]="softskillsForm" (ngSubmit)="onEnviar($event)">
+                                        <div class="mb-3">
+                                            <label for="hardskillnombre" class="form-label">Ingrese nombre de la habilidad</label>
+                                            <input type="text" class="form-control" formControlName="nombre" id="nombre" name="nombre"
+                                                aria-describedby="emailHelp">
+    
+                                        </div>
+    
+    
+                                        <div class="mb-3">
+                                            <label for="formacionUno" class="form-label">Ingrese porcentaje de progreso</label>
+                                            <input type="text" class="form-control" formControlName="porcentaje" id="porcentaje" name="porcentaje"
+                                                aria-describedby="emailHelp">
+    
+                                        </div>
+                                      
+                                    </form>
+    
+                                </div>
+                                
+                            </div>
+                            <div class="col-1">
+    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button mb-2" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+          <!--Agregar soft modal-->
+    <div class="modal fade" id="agregarSoftSkill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar SoftSkill</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-1">
+
+                            </div>
+                            <div class="col-10">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="agregarHabilidad" class="form-label">Ingrese Nombre o habilidad</label>
+                                        <input type="text" class="form-control" id="agregarHabilidad"
+                                            aria-describedby="emailHelp">
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="agregarPorcentaje" class="form-label">Ingrese porcentaje de progreso</label>
+                                        <input type="text" class="form-control" id="agregarPorcentaje" aria-describedby="emailHelp">
+
+                                    </div>
+                     
+                                </form>
+
+                                </div>
+                           
+                        </div>
+                        <div class="col-1">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button mb-2" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelarr</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!--proyectos inicio colapsable -->
+        <li class="list-group-item">
+            <a class="link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseProyecto"><i
+                    class="fa-solid fa-diagram-project"></i> Proyectos</a>
+            <span class="badge bg-dark rounded-pill ms-2">3</span>
+        </li>
+
+        <div class="collapse me-auto mb-auto" id="collapseProyecto">
+            <div class="card card-body">
+                <li class="list-group-item">
+                    <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#proyectoUno"><i
+                            class="fa-solid fa-diagram-project"></i> Proyecto 1</a>
+
+                </li>
+                <li class="list-group-item">
+                    <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#proyectoDos"><i
+                            class="fa-solid fa-diagram-project"></i> Proyecto 2</a>
+                </li>
+                <li class="list-group-item">
+                    <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#proyectoTres"><i
+                            class="fa-solid fa-diagram-project"></i> Proyecto 3</a>
+                </li>
+            </div>
+        </div>
+        </ul>
+</div>

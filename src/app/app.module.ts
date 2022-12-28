@@ -16,6 +16,13 @@ import { BackofficeComponent } from './componentes/admin/backoffice/backoffice.c
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatosPorfolioService } from './servicios/datosPorfolio.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarBOComponent } from './componentes/admin/navbar-bo/navbar-bo.component';
+import { SeccionesBOComponent } from './componentes/admin/secciones-bo/secciones-bo.component';
+import { FormularioProyectosComponent } from './componentes/admin/backoffice/Formularios/formulario-proyectos/formulario-proyectos.component';
+import { NavBarFormComponent } from './componentes/admin/backoffice/Formularios/nav-bar-form/nav-bar-form.component';
+import { InformacionFormComponent } from './componentes/admin/backoffice/Formularios/informacion-form/informacion-form.component';
+import { ExperienciaFormComponent } from './componentes/admin/backoffice/Formularios/experiencia-form/experiencia-form.component';
+import { FormacionFormComponent } from './componentes/admin/backoffice/Formularios/formacion-form/formacion-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +37,13 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegistroComponent,
     BackofficeComponent,
+    NavbarBOComponent,
+    SeccionesBOComponent,
+    FormularioProyectosComponent,
+    NavBarFormComponent,
+    InformacionFormComponent,
+    ExperienciaFormComponent,
+    FormacionFormComponent,
     
   ],
   imports: [
@@ -41,6 +55,9 @@ import { HttpClientModule } from '@angular/common/http';
   
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    NavBarFormComponent
+  ]
 })
 export class AppModule { }

@@ -1,0 +1,90 @@
+<!-- 
+<div *ngFor="let experiencias of misExperienciasBO" >
+    <div class="modal fade" [id]="experiencias.titulo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{experiencias.titulo}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+
+                    <p class="mb-3 mt-4">ID: {{ experiencias.id}} </p>
+                    <div class="mb-3">
+                        <label for="picExperienciaUno" class="form-label">Ingrese ruta de la imagen  <span
+                            style="color:#9A93B0;"><em> ruta actual: {{ experiencias.img_src}} </em></span></label>
+                        <input class="form-control" type="text" id="picExperienciaUno">
+                    </div>
+                    <div class="mb-3 mt-4">
+                        <label for="experienciaUnoinfo1" class="form-label">Ingrese nombre de empresa o empleador  <span
+                                style="color:#9A93B0;"><em> Nombre actual: {{ experiencias.titulo}}</em></span></label>
+                        <input type="text" class="form-control" id="experienciaUnoinfo1" aria-describedby="emailHelp">
+                    </div>
+                    <p class="mb-3 mt-4"> Ingrese descripción  <span style="color:#9A93B0;"><em> descripción actual: {{ experiencias.descripcion }} </em></span></p>
+                    <div class="input-group mt-4">
+                        
+                        <span class="input-group-text">Descripción: </span>
+                        <textarea class="form-control" aria-label="detalleUno"></textarea>
+                    </div>
+                    <div class="mb-3 mt-4">
+                        <label for="periodoUno" class="form-label">Ingrese período  <span style="color:#9A93B0;"><em> Período actual {{ experiencias.periodo }}</em></span></label>
+                        <input type="text" class="form-control" id="priodoUno" aria-describedby="emailHelp">
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Actualizar</button>
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+<!-- inicio agregar experiencia 
+    <div class="modal fade" id="agregarExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Experiencia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="picAgregarExperiencia" class="form-label">Ingrese ruta de la imagen<span
+                            style="color:#9A93B0;"><em> Ej: assets/img/VD_transp.png</em></span></label>
+                        <input class="form-control" type="text" id="picAgregarExperiencia">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="agregarExperiencia" class="form-label">Ingrese nombre de empresa o empleador <span
+                                style="color:#9A93B0;"><em> Ej: VisualDigital</em></span></label>
+                        <input type="text" class="form-control" id="agregarExperiencia" aria-describedby="emailHelp">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">Ingrese descripción</span>
+                        <textarea class="form-control" aria-label="agregarDetalle"></textarea>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="agregarPeriodo" class="form-label">Ingrese período<span style="color:#9A93B0;"><em>
+                                    Ej:
+                                    2018 a 2021</em></span></label>
+                        <input type="text" class="form-control" id="agregarPeriodo" aria-describedby="emailHelp">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+                <p style="color:#9A93B0;"><em> // Nota: ** versión 1.0 ** </em> </p>
+                <p style="color:#9A93B0;"><em> El nombre de empresa o empleador debe ser una sola palabra. El ID de la experiencia se genera automáticamente</em> </p>
+                <p style="color:#9A93B0;"><em> El archivo de la imagen debe subirse al servidor mediante FTP o admin de archivos del hosting, luego se especifica la ruta mediante el BO</em> </p>
+            </div>
+        </div>
+    </div>
+-->

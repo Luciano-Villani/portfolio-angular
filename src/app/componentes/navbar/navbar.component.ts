@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosPorfolioService } from 'src/app/servicios/datosPorfolio.service';
+import { NavBarService } from 'src/app/servicios/nav-bar.service';
+import { navbarInterface } from 'src/assets/data/navbarInterface';
 
 @Component({
   selector: 'app-navbar',
@@ -7,14 +8,14 @@ import { DatosPorfolioService } from 'src/app/servicios/datosPorfolio.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  misRedes:any;
+  misRedes: navbarInterface[] = [];
 
-  constructor(private datosPorfoio:DatosPorfolioService) { }
+  constructor(private datosPorfoio:NavBarService) { }
 
   ngOnInit(): void {
     this.datosPorfoio.obtenerDatos().subscribe(data=>{
       console.log(data);
-      this.misRedes=data.RedesSociales;
+      this.misRedes=data;
 
     });
   
