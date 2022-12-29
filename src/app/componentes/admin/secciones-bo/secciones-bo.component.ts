@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InformacionService } from 'src/app/servicios/informacion.service';
 import { HardSkillsService } from 'src/app/servicios/hard-skills.service';
 import { SoftSkillsService } from 'src/app/servicios/soft-skills.service';
+import { ProyectosService } from 'src/app/servicios/proyectos.service';
 
 @Component({
   selector: 'app-secciones-bo',
@@ -19,6 +20,7 @@ export class SeccionesBOComponent implements OnInit {
   miInformacionBO:any;
   misHardskillsBO: any;
   misSoftskillsBO: any;
+  misProyectosBO: any;
   
   experienciaForm: FormGroup;
   redesForm: FormGroup;
@@ -26,19 +28,24 @@ export class SeccionesBOComponent implements OnInit {
   formacionForm: FormGroup;
   hardskillsForm: FormGroup;
   softskillsForm: FormGroup;
+  proyectosForm: FormGroup;
 
 
   constructor(private datosExperiencia:ExperienciaService, private datosFormacion:FormacionService,
      private datosRedes:NavBarService, private datosInfo:InformacionService,
-     private formBuilder:FormBuilder, private datosHardskills:HardSkillsService, private datosSoftskills:SoftSkillsService,) {
+     private formBuilder:FormBuilder, private datosHardskills:HardSkillsService, private datosSoftskills:SoftSkillsService,
+      private datosProyectos:ProyectosService,) {
     
+    
+   
     this.experienciaForm = this.formBuilder.group({
       id: [''],
       img_src: ['', [Validators.required]],
       titulo: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
       periodo: ['', [Validators.required]],
-      
+          
+    
     });
     this.redesForm = this.formBuilder.group({
       id: [''],
@@ -77,6 +84,14 @@ export class SeccionesBOComponent implements OnInit {
     porcentaje: ['', [Validators.required]],
     
   });
+  this.proyectosForm = this.formBuilder.group({
+    id: [''],
+    img_src: ['', [Validators.required]],
+    titulo: ['', [Validators.required]],
+    descripcion: ['', [Validators.required]],
+    link_ver_mas: ['', [Validators.required]],
+     
+ });
    
    }
 
@@ -107,6 +122,10 @@ export class SeccionesBOComponent implements OnInit {
   this.datosSoftskills.obtenerDatos().subscribe(data=>{
     console.log(data);
     this.misSoftskillsBO=data;
+  });
+  this.datosProyectos.obtenerDatos().subscribe(data=>{
+    console.log(data);
+    this.misProyectosBO=data;
   });
 
 
@@ -181,14 +200,32 @@ selecSoftSkill(softskill:any){
   })
   
 }
+
+selecProyecto(proyecto:any){
+  console.log(proyecto);
+  
+  this.proyectosForm.setValue({
+    id: proyecto.id,
+    img_src: proyecto.img_src,
+    titulo: proyecto.titulo,
+    descripcion: proyecto.descripcion,
+    link_ver_mas: proyecto.link_ver_mas,    
+    
+  })
+  
+}
+
 onEnviar(event:Event)
+
 
   { 
   event.preventDefault;
-  
+  this.datosProyectos.agregarProyecto(this.proyectosForm.value).subscribe(data=>{
+    console.log("DATA" + JSON.stringify(data));
 
-  }
-
+  })
+}
 
 
 }
+

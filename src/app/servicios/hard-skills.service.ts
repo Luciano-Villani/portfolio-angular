@@ -10,7 +10,7 @@ export class HardSkillsService {
   url:string="http://localhost:8080/"
 
   constructor(private http:HttpClient) { }
-  obtenerDatos():Observable<any>{
+  obtenerDatos():Observable<skillsInterface>{
     return this.http.get<any>(this.url+"ver/hardskills")
 }
 

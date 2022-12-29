@@ -10,17 +10,24 @@ export class ProyectosService {
   url:string="http://localhost:8080/"
 
   constructor(private http:HttpClient) { }
-  obtenerDatos():Observable<any>{
+  obtenerDatos():Observable<proyectosInterface>{
     return this.http.get<any>(this.url+"ver/proyectos")
 }
+
+  
 public proyectos: proyectosInterface | boolean = false;
  
-    public getHardSkills(): proyectosInterface    | boolean {
+    public getProyecto(): proyectosInterface    | boolean {
         return this.proyectos;
     }
  
-    public setHardSkills(proyectos: proyectosInterface): void {
+    public setProyecto(proyectos: proyectosInterface): void {
         this.proyectos = proyectos;
     }
+    agregarProyecto(body: any):Observable<any> {
+        return this.http.post(this.url+"actualizar/proyecto", body);
+    }
+
+
 
 }
