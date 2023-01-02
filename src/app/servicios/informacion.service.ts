@@ -22,4 +22,7 @@ public informacion: informacionInterface | boolean = false;
     public setInformacion(informacion: informacionInterface): void {
         this.informacion = informacion;
     }
+    agregarInformacion(body: any):Observable<any> {
+      return this.http.put(this.url+"actualizar/informacion", body);
+  }
 }

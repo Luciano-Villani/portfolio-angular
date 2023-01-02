@@ -302,5 +302,27 @@ onEnviarExperiencia(event:Event)
 
  })
 }
+onEnviarInformacion(event:Event)
+
+
+ { 
+ event.preventDefault;
+ this.datosInfo.agregarInformacion(this.infoForm.value).subscribe(data=>{
+   //console.log("DATA" + JSON.stringify(data));
+   console.log(data);
+
+ })
+}
+onEnviarRed(event:Event)
+
+
+ { 
+ event.preventDefault;
+ this.datosRedes.agregarRed(this.redesForm.value).subscribe(data=>{
+   //console.log("DATA" + JSON.stringify(data));
+   console.log(data);
+
+ })
+}
 }
 

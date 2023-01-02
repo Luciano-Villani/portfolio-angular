@@ -27,4 +27,7 @@ public redes: navbarInterface | boolean = false;
     public setExperiencia(redes: navbarInterface): void {
         this.redes = redes;
     }
+    agregarRed(body: any):Observable<any> {
+      return this.http.put(this.url+"actualizar/red", body);
+  }
 }

@@ -10,7 +10,7 @@
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Sección redes sociales</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Editar / Agregar redes sociales</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -21,7 +21,7 @@
 
                         </div>
                         <div class="col-10">
-                            <form [formGroup]="redesForm" (ngSubmit)="onEnviar($event)">
+                            <form [formGroup]="redesForm" (ngSubmit)="onEnviarRed($event)">
                                 <div class="mb-3" >
                                     <label for="idRedsocial" class="form-label">ID</label>
                                     <input type="url" formControlName="id" class="form-control" id="id" name="id"
@@ -34,6 +34,12 @@
                                         aria-describedby="emailHelp">
 
                                 </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    
+                                </div>
                                
                             </form>
                         </div>
@@ -45,14 +51,7 @@
 
 
             </div>
-            <div class="modal-footer">
-                <button type="button mb-2" class="btn btn-primary">Guardar cambios</button>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-                
-
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-
-            </div>
+            
         </div>
     </div>
 </div>
@@ -70,10 +69,12 @@
                     <a (click)="selecRed(redes)" class="link" href="#" data-bs-toggle="modal" data-bs-target=#redes><i
                             class="fa-solid fa-briefcase"></i>{{redes.icon}}</a>
                 </li>
+                <!--
                 <li class="list-group-item">
                     <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarRed">
                         <i></i> + Agregar Red</a>
                 </li>
+                -->
             </div>
         </div>
        <!--fin redes colapsable-->
@@ -88,7 +89,7 @@
             <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Sección Información</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Editar información</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -98,7 +99,7 @@
         
                                 </div>
                                 <div class="col-10">
-                                    <form [formGroup]="infoForm" (ngSubmit)="onEnviar($event)">
+                                    <form [formGroup]="infoForm" (ngSubmit)="onEnviarInformacion($event)">
                                         <div class="mb-3">
                                             <label for="info1" class="form-label">Ingrese texto linea 1</label>
                                             <input type="text" class="form-control" formControlName="linea1" id="linea1" name="linea1" aria-describedby="emailHelp">
@@ -124,6 +125,11 @@
                                                 aria-describedby="emailHelp">
         
                                         </div>
+                                        <div class="modal-footer">
+                                            <button type="button mb-2" class="btn btn-primary">Guardar</button>
+                                            <button type="button" class="btn btn-danger">Eliminar</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
                                     </form>
                                 </div>
                                 
@@ -134,12 +140,7 @@
                         </div>
                     </div>
         
-                    <div class="modal-footer">
-                        <button type="button mb-2" class="btn btn-primary">Guardar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
-                        <button type="button" class="btn btn-warning">Actualizar</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
+                    
         
                 </div>
             </div>
@@ -250,10 +251,12 @@
                     <a (click)="selecExp(experiencias)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#experienciaModal"><i
                             class="fa-solid fa-briefcase"></i>{{ experiencias.titulo }}</a>
                 </li>
+                <!--
                 <li class="list-group-item">
                     <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarExperiencia">
                         <i></i> + Agregar Experiencia</a>
                 </li>
+                -->
             </div>
         </div>
         
@@ -395,12 +398,15 @@
                     <a (click)="selecFormacion(formacion)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#formacionModal"><i
                             class="fa-solid fa-graduation-cap"></i>{{ formacion.referencia }}</a>
                 </li>
+                <!--
                 <li>
                 <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarFormacion">
                     <li class="list-group-item">
                         <i></i> + Agregar formación            
                 </li>
+                
             </a>
+            -->
             </div>
         </div>
 
@@ -420,11 +426,13 @@
                     <a (click)="selecHardSkill(hardskills)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#hardskillsModal"><i
                             class="fa-solid fa-diagram-project"></i>{{hardskills.nombre}}</a>
                 </li>
+                <!--
                 <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarHardSkill">
                     <li class="list-group-item">
                         <i></i> + Agregar HardSkill            
                      </li>
                  </a>
+                 -->
                 
                 
             </div>
@@ -553,12 +561,13 @@
                     <a (click)="selecSoftSkill(softskills)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#softskillsModal"><i
                             class="fa-solid fa-diagram-project"></i>{{softskills.nombre}}</a>
                 </li>
+                <!-- 
                 <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarSoftSkill">
                     <li class="list-group-item">
                         <i></i> + Agregar SoftSkill            
                      </li>
                  </a>
-                
+                -->
                 
             </div>
         </div>
@@ -684,11 +693,13 @@
                     <a (click)="selecProyecto(proyecto)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#proyectosModal"><i
                             class="fa-solid fa-diagram-project"></i>{{proyecto.titulo}}</a>
                 </li>
+                <!-- 
                 <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarProyectoModal">
                     <li class="list-group-item">
                         <i></i> + Agregar proyecto            
                      </li>
                  </a>
+                 -->
                 
                 
             </div>
