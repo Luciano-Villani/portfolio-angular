@@ -22,6 +22,9 @@ public softskills: skillsInterface | boolean = false;
     public setSoftSkills(softskills: skillsInterface): void {
         this.softskills = softskills;
     }
+    agregarSoftSkill(body: any):Observable<any> {
+      return this.http.put(this.url+"actualizar/softskill", body);
+  }
 
 }
 

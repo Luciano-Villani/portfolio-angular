@@ -21,5 +21,8 @@ public formacion: formacionInterface | boolean = false;
     public setFormacion(formacion: formacionInterface): void {
         this.formacion = formacion;
     }
+    agregarFormacion(body: any):Observable<any> {
+      return this.http.put(this.url+"actualizar/formacion", body);
+  }
 
 }

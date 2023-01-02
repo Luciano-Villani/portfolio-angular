@@ -23,7 +23,9 @@ public hardskills: skillsInterface | boolean = false;
     public setHardSkills(hardskills: skillsInterface): void {
         this.hardskills = hardskills;
     }
-
+    agregarHardSkill(body: any):Observable<any> {
+      return this.http.put(this.url+"actualizar/hardskill", body);
+  }
 }
 
 

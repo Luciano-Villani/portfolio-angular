@@ -25,7 +25,12 @@ public proyectos: proyectosInterface | boolean = false;
         this.proyectos = proyectos;
     }
     agregarProyecto(body: any):Observable<any> {
-        return this.http.post(this.url+"actualizar/proyecto", body);
+        return this.http.put(this.url+"actualizar/proyecto", body);
+    }
+
+    
+     borrarProyecto(id: number):Observable<any> { 
+            return this.http.post(this.url + "proyecto/delete" , id);
     }
 
 

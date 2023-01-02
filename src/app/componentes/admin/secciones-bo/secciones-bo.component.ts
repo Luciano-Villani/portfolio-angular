@@ -21,6 +21,7 @@ export class SeccionesBOComponent implements OnInit {
   misHardskillsBO: any;
   misSoftskillsBO: any;
   misProyectosBO: any;
+  proyectoActual: any;
   
   experienciaForm: FormGroup;
   redesForm: FormGroup;
@@ -127,10 +128,10 @@ export class SeccionesBOComponent implements OnInit {
     console.log(data);
     this.misProyectosBO=data;
   });
-
-
-
 }
+
+
+
 selecRed(redes:any){
   console.log(redes);
   this.redesForm.setValue({
@@ -202,17 +203,22 @@ selecSoftSkill(softskill:any){
 }
 
 selecProyecto(proyecto:any){
-  console.log(proyecto);
-  
+ console.log(proyecto);
+   
+ this.proyectoActual = proyecto;
+
   this.proyectosForm.setValue({
     id: proyecto.id,
     img_src: proyecto.img_src,
     titulo: proyecto.titulo,
     descripcion: proyecto.descripcion,
-    link_ver_mas: proyecto.link_ver_mas,    
+    link_ver_mas: proyecto.link_ver_mas,  
+
+     
     
   })
   
+
 }
 
 onEnviar(event:Event)
@@ -221,11 +227,80 @@ onEnviar(event:Event)
   { 
   event.preventDefault;
   this.datosProyectos.agregarProyecto(this.proyectosForm.value).subscribe(data=>{
-    console.log("DATA" + JSON.stringify(data));
+    //console.log("DATA" + JSON.stringify(data));
+    console.log(data);
 
   })
+
+  
+}
+
+onEliminar()
+
+{
+  
+  this.datosProyectos.borrarProyecto(this.proyectoActual.id); {
+    
+  }
+
 }
 
 
+ //validacion
+ // get Img_src()
+ //{
+ //  return this.proyectosForm.get('img_src')
+ // }
+ 
+ 
+ onEnviarSoftSkill(event:Event)
+
+
+ { 
+ event.preventDefault;
+ this.datosSoftskills.agregarSoftSkill(this.softskillsForm.value).subscribe(data=>{
+   //console.log("DATA" + JSON.stringify(data));
+   console.log(data);
+
+ })
+
+ 
+}
+onEnviarHardSkill(event:Event)
+
+
+ { 
+ event.preventDefault;
+ this.datosHardskills.agregarHardSkill(this.hardskillsForm.value).subscribe(data=>{
+   //console.log("DATA" + JSON.stringify(data));
+   console.log(data);
+
+ })
+
+ 
+}
+onEnviarFormacion(event:Event)
+
+
+ { 
+ event.preventDefault;
+ this.datosFormacion.agregarFormacion(this.formacionForm.value).subscribe(data=>{
+   //console.log("DATA" + JSON.stringify(data));
+   console.log(data);
+
+ })
+
+}
+onEnviarExperiencia(event:Event)
+
+
+ { 
+ event.preventDefault;
+ this.datosExperiencia.agregarExperiencia(this.experienciaForm.value).subscribe(data=>{
+   //console.log("DATA" + JSON.stringify(data));
+   console.log(data);
+
+ })
+}
 }
 

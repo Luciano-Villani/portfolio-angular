@@ -22,5 +22,8 @@ public experiencia: experienciaInterface | boolean = false;
     public setExperiencia(experiencia: experienciaInterface): void {
         this.experiencia = experiencia;
     }
+    agregarExperiencia(body: any):Observable<any> {
+      return this.http.put(this.url+"actualizar/experiencia", body);
+  }
 }
 

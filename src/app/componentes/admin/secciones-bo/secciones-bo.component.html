@@ -146,76 +146,68 @@
         
         </div>
 <!--Fin formulario información-->
-
+<!--inicio experiencia colapsable-->
         <li class="list-group-item">
             <a class="link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseExperiencia"><i
                     class="fa-solid fa-briefcase"></i> Experiencia</a>
             <span class="badge bg-dark rounded-pill ms-2">4</span>
         </li>
         
-        <!--inicio experiencia colapsable-->
+        <!--inicio experiencia form-->
         <div class="modal fade" id="experienciaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Editar experiencia</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Editar / Agregar Experiencia</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form [formGroup]="experienciaForm" (ngSubmit)="onEnviar($event)">
-    
-    
-                       
+                        <form [formGroup]="experienciaForm" (ngSubmit)="onEnviarExperiencia($event)">
+                        <p class="text-danger"> --> Para agregar una nueva experiencia dejar el ID en blanco, el sistema asignara uno automáticamente - Para editar los datos actuales dejar el mismo ID</p>
+
                         <div class="mb-3">
-                            <label for="tituloExperienciaUno" class="form-label">Ingrese ID<span
-                                style="color:#9A93B0;"><em> ID actual 🡣 </em></span></label>
+                            <label for="experienciaId" class="form-label">ID</label>
                             <input type="text" formControlName="id" class="form-control" type="text" id="id" name="id">
                         </div>
                         <div class="mb-3">
-                            <label for="tituloExperienciaUno" class="form-label">Ingrese titulo<span
-                                style="color:#9A93B0;"><em> Titulo actual 🡣 </em></span></label>
+                            <label for="experienciaTitulo" class="form-label">Ingrese titulo, nombre de empresa o empleador</label>
                             <input type="text" formControlName="titulo" class="form-control" type="text" id="titulo" name="titulo">
                         </div>
                         <div class="mb-3">
-                            <label for="picExperienciaUno" class="form-label">Ingrese ruta de la imagen<span
-                                style="color:#9A93B0;"><em> ruta actual🡣 </em></span></label>
+                            <label for="experienciaPic" class="form-label">Ingrese ruta de la imagen</label>
                             <input type="text" formControlName="img_src" class="form-control" type="text" id="img_src" name="img_src">
                         </div>
-                        <div class="mb-3 mt-4">
-                            <label for="experienciaUnoinfo1" class="form-label">Ingrese nombre de empresa o empleador<span
-                                    style="color:#9A93B0;"><em> Nombre actual 🡣</em></span></label>
-                            <input type="text" formControlName="descripcion" type="text" class="form-control" id="descripcion" name="descripcion" aria-describedby="emailHelp">
-                        </div>
-                        <p class="mb-3 mt-4"> Ingrese descripción<span style="color:#9A93B0;"><em> descripción actual 🡣</em></span></p>
+                       
+                        <p class="mb-3 mt-4"> Ingrese descripción</p>
                         <div class="input-group mt-4">
                             
                             <span class="input-group-text">Descripción: </span>
                             <textarea type="text" formControlName="descripcion" class="form-control" aria-label="detalleUno" id="descripcion" name="descripcion"></textarea>
                         </div>
                         <div class="mb-3 mt-4">
-                            <label for="periodoUno" class="form-label">Ingrese período<span style="color:#9A93B0;"><em> Período actual 🡣</em></span></label>
+                            <label for="experienciaPeriodo" class="form-label">Ingrese período</label>
                             <input type="text" formControlName="periodo" type="text" class="form-control" id="periodo" name="periodo" aria-describedby="emailHelp">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         </div>
     
                     </form>
                     </div>
                     
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Actualizar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
-                        
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
+                  
                 </div>
             </div>
         </div>
-
+<!--
         <div class="modal fade" id="agregarExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar Experiencia</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Editar / Agregar Experiencia</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -250,6 +242,7 @@
             </div>
         </div>
     </div>
+    -->
 
         <div class="collapse me-auto mb-auto" id="collapseExperiencia">
             <div class="card card-body">
@@ -263,6 +256,7 @@
                 </li>
             </div>
         </div>
+        
         <!--fin experiencia colapsable-->
 
          <!--inicio modal formación-->
@@ -271,7 +265,7 @@
             <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Sección Formación</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Editar / Agregar Formación</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -281,9 +275,16 @@
     
                                 </div>
                                 <div class="col-10">
-                                    <form [formGroup]="formacionForm" (ngSubmit)="onEnviar($event)">
+                                    <form [formGroup]="formacionForm" (ngSubmit)="onEnviarFormacion($event)">
                                         <div class="mb-3">
-                                            <label for="formacionUno" class="form-label">Ingrese Institución o curso</label>
+                                            <p class="text-danger"> --> Para agregar una nueva Formacion dejar el ID en blanco, el sistema asignara uno automáticamente - Para editar los datos actuales dejar el mismo ID</p>
+                                            <label for="formacionId" class="form-label">ID</label>
+                                            <input type="text" class="form-control" formControlName="id" id="id" name="id"
+                                                aria-describedby="emailHelp">
+    
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="formacionCurso" class="form-label">Ingrese Institución o curso</label>
                                             <input type="text" class="form-control" formControlName="titulo" id="titulo" name="titulo"
                                                 aria-describedby="emailHelp">
     
@@ -291,17 +292,22 @@
     
     
                                         <div class="mb-3">
-                                            <label for="formacionUno" class="form-label">Ingrese detalle
-                                                <span style="color:#9A93B0;"><em> Información actual</em></span></label>
+                                            <label for="formacionDetalle" class="form-label">Ingrese detalle</label>
                                             <input type="text" class="form-control" formControlName="descripcion" id="descripcion" name="descripcion"
                                                 aria-describedby="emailHelp">
     
                                         </div>
                                          <div class="mb-3">
-                                            <label for="formacionUno" class="form-label">Ingrese nombre referencia para el menu</label>
+                                            <label for="formacionReferenciaMenu" class="form-label">Ingrese nombre referencia para el menu</label>
                                             <input type="text" class="form-control" formControlName="referencia" id="referencia" name="referencia"
                                                 aria-describedby="emailHelp">
     
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                            <button type="button" class="btn btn-danger">Eliminar</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        
                                         </div>
                                     </form>
     
@@ -313,17 +319,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button mb-2" class="btn btn-primary">Guardar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
-                        
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-    
-                    </div>
+                   
                 </div>
             </div>
         </div>
-        <!--Agregar formacion modal-->
+        <!--Agregar formacion modal
     <div class="modal fade" id="agregarFormacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
@@ -378,7 +378,7 @@
             </div>
         </div>
     </div>
-
+-->
 
         <!--inicio colapsable formación-->
          <li class="list-group-item">
@@ -435,7 +435,7 @@
             <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Sección Hard Skills</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Editar / Agregar Hard Skills</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -445,7 +445,15 @@
     
                                 </div>
                                 <div class="col-10">
-                                    <form [formGroup]="hardskillsForm" (ngSubmit)="onEnviar($event)">
+                                    <form [formGroup]="hardskillsForm" (ngSubmit)="onEnviarHardSkill($event)">
+
+                                        <div class="mb-3">
+                                            <p class="text-danger"> --> Para agregar una nueva habilidad dejar el ID en blanco, el sistema asignara uno automáticamente - Para editar los datos actuales dejar el mismo ID</p>
+                                            <label for="hardskillId" class="form-label">ID</label>
+                                            <input type="text" class="form-control" formControlName="id" id="id" name="id"
+                                                aria-describedby="emailHelp">
+    
+                                        </div>
                                         <div class="mb-3">
                                             <label for="hardskillnombre" class="form-label">Ingrese nombre de la habilidad</label>
                                             <input type="text" class="form-control" formControlName="nombre" id="nombre" name="nombre"
@@ -455,12 +463,15 @@
     
     
                                         <div class="mb-3">
-                                            <label for="formacionUno" class="form-label">Ingrese porcentaje de progreso</label>
+                                            <label for="hardskillPorcentaje" class="form-label">Ingrese porcentaje de progreso</label>
                                             <input type="text" class="form-control" formControlName="porcentaje" id="porcentaje" name="porcentaje"
                                                 aria-describedby="emailHelp">
     
                                         </div>
-                                      
+                                          <button type="submit" class="btn btn-primary">Guardar</button>
+                                          <button type="button" class="btn btn-danger">Eliminar</button>
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        
                                     </form>
     
                                 </div>
@@ -472,17 +483,14 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button mb-2" class="btn btn-primary">Guardar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
                         
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
     
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--Agregar hardskill modal-->
+        <!--Agregar hardskill modal
     <div class="modal fade" id="agregarHardSkill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
@@ -529,6 +537,7 @@
             </div>
         </div>
     </div>
+    -->
         
         <!-- soft skills-->
 
@@ -557,7 +566,7 @@
             <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Sección Soft Skills - Editar</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Editar / Agregar Soft Skills</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -567,9 +576,18 @@
     
                                 </div>
                                 <div class="col-10">
-                                    <form [formGroup]="softskillsForm" (ngSubmit)="onEnviar($event)">
+                                    <form [formGroup]="softskillsForm" (ngSubmit)="onEnviarSoftSkill($event)">
+
                                         <div class="mb-3">
-                                            <label for="hardskillnombre" class="form-label">Ingrese nombre de la habilidad</label>
+                                            <p class="text-danger"> --> Para agregar una nueva habilidad dejar el ID en blanco, el sistema asignara uno automáticamente - Para editar los datos actuales dejar el mismo ID</p>
+                                            <label for="softskillId" class="form-label">ID</label>
+                                            <input type="text" class="form-control" formControlName="id" id="id" name="id"
+                                                aria-describedby="emailHelp">
+    
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="softskillnombre" class="form-label">Ingrese nombre de la habilidad</label>
                                             <input type="text" class="form-control" formControlName="nombre" id="nombre" name="nombre"
                                                 aria-describedby="emailHelp">
     
@@ -577,10 +595,16 @@
     
     
                                         <div class="mb-3">
-                                            <label for="formacionUno" class="form-label">Ingrese porcentaje de progreso</label>
+                                            <label for="softSkillPorcentaje" class="form-label">Ingrese porcentaje de progreso</label>
                                             <input type="text" class="form-control" formControlName="porcentaje" id="porcentaje" name="porcentaje"
                                                 aria-describedby="emailHelp">
     
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                            <button type="button" class="btn btn-danger">Eliminar</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        
                                         </div>
                                       
                                     </form>
@@ -593,17 +617,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button mb-2" class="btn btn-primary">Guardar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
-                        
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-    
-                    </div>
+                   
                 </div>
             </div>
         </div>
-          <!--Agregar soft modal-->
+          <!--Agregar soft modal
     <div class="modal fade" id="agregarSoftSkill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
@@ -618,7 +636,7 @@
 
                             </div>
                             <div class="col-10">
-                                <form>
+                                <form [formGroup]="softskillsForm" (ngSubmit)="onEnviarSoftSkill($event)">
                                     <div class="mb-3">
                                         <label for="agregarHabilidad" class="form-label">Ingrese Nombre o habilidad</label>
                                         <input type="text" class="form-control" id="agregarHabilidad"
@@ -631,6 +649,11 @@
                                         <input type="text" class="form-control" id="agregarPorcentaje" aria-describedby="emailHelp">
 
                                     </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Guardar</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    
+                                    </div>
                      
                                 </form>
 
@@ -642,14 +665,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button mb-2" class="btn btn-primary">Guardar</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelarr</button>
-
-                </div>
+              
             </div>
         </div>
     </div>
+    -->
 
         <!--proyectos inicio colapsable -->
         <li class="list-group-item">
@@ -677,7 +697,7 @@
             <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Editar proyecto</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Editar / Agregar proyecto</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -686,12 +706,15 @@
     
                        
                         <div class="mb-3">
+                            <p class="text-danger"> --> Para agregar un nuevo proyecto dejar el ID en blanco - Para editar los datos actuales dejar el mismo ID</p>
+                            
                             <label for="idDeProyecto" class="form-label">Ingrese ID</label>
                             <input type="text" formControlName="id" class="form-control" type="text" id="id" name="id">
                         </div>
                         <div class="mb-3">
                             <label for="imgProyecto" class="form-label">Ingrese ruta de la imagen</label>
                             <input type="text" formControlName="img_src" class="form-control" type="text" id="img_src" name="img_src">
+                            
                         </div>
                         <div class="mb-3">
                             <label for="tituloProyecto" class="form-label">Ingrese título</label>
@@ -706,20 +729,21 @@
                             <label for="linkVerMasproyecto" class="form-label">Ingrese URL del link ver más</label>
                             <input type="text" formControlName="link_ver_mas" type="text" class="form-control" id="link_ver_mas" name="link_ver_mas" aria-describedby="emailHelp">
                         </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-danger" (click)="onEliminar()" >Eliminar</button>
+                            
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
     
                     </form>
                     </div>
                     
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Actualizar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
-                        
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
+                    
                 </div>
             </div>
         </div>
-        <!-- agregar proyecto modal-->
+        <!-- agregar proyecto modal
         <div class="modal fade" id="agregarProyectoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
@@ -730,8 +754,6 @@
                     <div class="modal-body">
                         <form [formGroup]="proyectosForm" (ngSubmit)="onEnviar($event)">
     
-    
-                       
                         <div class="mb-3">
                             <label for="idDeProyecto" class="form-label">Ingrese ID</label>
                             <input type="text" class="form-control" type="text" id="id" name="id">
@@ -753,37 +775,16 @@
                             <label for="linkVerMasproyecto" class="form-label">Ingrese URL del link ver más</label>
                             <input type="text" type="text" class="form-control" id="link_ver_mas" name="link_ver_mas" aria-describedby="emailHelp">
                         </div>
-    
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                            
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
                     </form>
                     </div>
-                    
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
-                        
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
+                   
                 </div>
             </div>
         </div>
-<!-- 
-        <div class="collapse me-auto mb-auto" id="collapseProyecto">
-            <div class="card card-body">
-                <li class="list-group-item">
-                    <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#proyectoUno"><i
-                            class="fa-solid fa-diagram-project"></i> Proyecto 1</a>
-
-                </li>
-                <li class="list-group-item">
-                    <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#proyectoDos"><i
-                            class="fa-solid fa-diagram-project"></i> Proyecto 2</a>
-                </li>
-                <li class="list-group-item">
-                    <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#proyectoTres"><i
-                            class="fa-solid fa-diagram-project"></i> Proyecto 3</a>
-                </li>
-            </div>
-        </div>
-        </ul>
-</div>
--->
+        -->
