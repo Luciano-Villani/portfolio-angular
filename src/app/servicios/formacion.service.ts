@@ -24,5 +24,8 @@ public formacion: formacionInterface | boolean = false;
     agregarFormacion(body: any):Observable<any> {
       return this.http.put(this.url+"actualizar/formacion", body);
   }
+  borrarFormacion(id: number):Observable<any> { 
+    return this.http.delete(this.url + "formacion/delete/" + id);
+}
 
 }

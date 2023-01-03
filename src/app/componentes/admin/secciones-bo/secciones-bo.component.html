@@ -35,8 +35,8 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Guardar</button>
-                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                    <button type="submit" class="btn btn-primary" [disabled]="redesForm.invalid">Guardar</button>
+                                    <button type="button" class="btn btn-danger" (click)="onEliminarRed()">Eliminar</button>
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     
                                 </div>
@@ -69,12 +69,7 @@
                     <a (click)="selecRed(redes)" class="link" href="#" data-bs-toggle="modal" data-bs-target=#redes><i
                             class="fa-solid fa-briefcase"></i>{{redes.icon}}</a>
                 </li>
-                <!--
-                <li class="list-group-item">
-                    <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarRed">
-                        <i></i> + Agregar Red</a>
-                </li>
-                -->
+               
             </div>
         </div>
        <!--fin redes colapsable-->
@@ -126,8 +121,8 @@
         
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button mb-2" class="btn btn-primary">Guardar</button>
-                                            <button type="button" class="btn btn-danger">Eliminar</button>
+                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                           <!--<button type="button" class="btn btn-danger" (click)="onEliminarInformacion()">Eliminar</button>--> 
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                         </div>
                                     </form>
@@ -190,8 +185,8 @@
                             <input type="text" formControlName="periodo" type="text" class="form-control" id="periodo" name="periodo" aria-describedby="emailHelp">
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
-                            <button type="button" class="btn btn-danger">Eliminar</button>
+                            <button type="submit" class="btn btn-primary" [disabled]="experienciaForm.invalid">Guardar</button>
+                            <button type="button" class="btn btn-danger"(click)="onEliminarExperiencia()">Eliminar</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         </div>
     
@@ -202,48 +197,6 @@
                 </div>
             </div>
         </div>
-<!--
-        <div class="modal fade" id="agregarExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Editar / Agregar Experiencia</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="mb-3">
-                        <label for="picAgregarExperiencia" class="form-label">Ingrese ruta de la imagen<span
-                            style="color:#9A93B0;"><em> Ej: assets/img/VD_transp.png</em></span></label>
-                        <input class="form-control" type="text" id="picAgregarExperiencia">
-                    </div>
-                    <div class="mb-3 mt-3">
-                        <label for="agregarExperiencia" class="form-label">Ingrese nombre de empresa o empleador <span
-                                style="color:#9A93B0;"><em> Ej: VisualDigital</em></span></label>
-                        <input type="text" class="form-control" id="agregarExperiencia" aria-describedby="emailHelp">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text">Ingrese descripción</span>
-                        <textarea class="form-control" aria-label="agregarDetalle"></textarea>
-                    </div>
-                    <div class="mb-3 mt-3">
-                        <label for="agregarPeriodo" class="form-label">Ingrese período<span style="color:#9A93B0;"><em>
-                                    Ej:
-                                    2018 a 2021</em></span></label>
-                        <input type="text" class="form-control" id="agregarPeriodo" aria-describedby="emailHelp">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Guardar</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-                
-                <p style="color:#9A93B0;"><em> El archivo de la imagen debe subirse al servidor mediante FTP o admin de archivos del hosting, luego se especifica la ruta mediante el BO</em> </p>
-            </div>
-        </div>
-    </div>
-    -->
 
         <div class="collapse me-auto mb-auto" id="collapseExperiencia">
             <div class="card card-body">
@@ -251,12 +204,7 @@
                     <a (click)="selecExp(experiencias)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#experienciaModal"><i
                             class="fa-solid fa-briefcase"></i>{{ experiencias.titulo }}</a>
                 </li>
-                <!--
-                <li class="list-group-item">
-                    <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarExperiencia">
-                        <i></i> + Agregar Experiencia</a>
-                </li>
-                -->
+                
             </div>
         </div>
         
@@ -307,8 +255,8 @@
     
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Guardar</button>
-                                            <button type="button" class="btn btn-danger">Eliminar</button>
+                                            <button type="submit" class="btn btn-primary" [disabled]="formacionForm.invalid">Guardar</button>
+                                            <button type="button" class="btn btn-danger" (click)="onEliminarFormacion()">Eliminar</button>
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         
                                         </div>
@@ -326,63 +274,7 @@
                 </div>
             </div>
         </div>
-        <!--Agregar formacion modal
-    <div class="modal fade" id="agregarFormacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar formación</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-1">
-
-                            </div>
-                            <div class="col-10">
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="agregarFormacion" class="form-label">Ingrese Institución o
-                                            curso<span style="color:#9A93B0;"><em> Ej: #YoProgramo</em></span></label>
-                                        <input type="text" class="form-control" id="agregarFormacion"
-                                            aria-describedby="emailHelp">
-
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="agregarDetalle" class="form-label">Ingrese detalle del titulo o
-                                            certificación<span style="color:#9A93B0;"><em> Ej: Segunda etapa de Argentina programa. Secretaría de Economía, Ministerio de Economía de la Nación.</em></span></label>
-                                        <input type="text" class="form-control" id="agregarDetalle"
-                                            aria-describedby="emailHelp">
-
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="agregarRefe" class="form-label">Ingrese nombre para el menu del BO<span style="color:#9A93B0;"><em> Una sola parabla sin espacios -- Ej: YoProgramo</em></span></label>
-                                        <input type="text" class="form-control" id="agregarRefe"
-                                            aria-describedby="emailHelp">
-
-                                    </div>
-                                </form>
-
-                                </div>
-                           
-                        </div>
-                        <div class="col-1">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button mb-2" class="btn btn-primary">Guardar</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelarr</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
--->
-
+        
         <!--inicio colapsable formación-->
          <li class="list-group-item">
             <a class="link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseFormacion"><i
@@ -398,15 +290,7 @@
                     <a (click)="selecFormacion(formacion)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#formacionModal"><i
                             class="fa-solid fa-graduation-cap"></i>{{ formacion.referencia }}</a>
                 </li>
-                <!--
-                <li>
-                <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarFormacion">
-                    <li class="list-group-item">
-                        <i></i> + Agregar formación            
-                </li>
                 
-            </a>
-            -->
             </div>
         </div>
 
@@ -426,13 +310,7 @@
                     <a (click)="selecHardSkill(hardskills)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#hardskillsModal"><i
                             class="fa-solid fa-diagram-project"></i>{{hardskills.nombre}}</a>
                 </li>
-                <!--
-                <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarHardSkill">
-                    <li class="list-group-item">
-                        <i></i> + Agregar HardSkill            
-                     </li>
-                 </a>
-                 -->
+                
                 
                 
             </div>
@@ -476,8 +354,8 @@
                                                 aria-describedby="emailHelp">
     
                                         </div>
-                                          <button type="submit" class="btn btn-primary">Guardar</button>
-                                          <button type="button" class="btn btn-danger">Eliminar</button>
+                                          <button type="submit" class="btn btn-primary" [disabled]="hardskillsForm.invalid">Guardar</button>
+                                          <button type="button" class="btn btn-danger"(click)="onEliminarHardskill()">Eliminar</button>
                                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                         
                                     </form>
@@ -498,54 +376,7 @@
             </div>
         </div>
 
-        <!--Agregar hardskill modal
-    <div class="modal fade" id="agregarHardSkill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar HardSkill</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-1">
-
-                            </div>
-                            <div class="col-10">
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="agregarHardSkill" class="form-label">Ingrese Nombre o habilidad</label>
-                                        <input type="text" class="form-control" id="agregarHardSkill"
-                                            aria-describedby="emailHelp">
-
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="agregarPorcentaje" class="form-label">Ingrese porcentaje de progreso</label>
-                                        <input type="text" class="form-control" id="agregarPorcentaje" aria-describedby="emailHelp">
-
-                                    </div>
-                     
-                                </form>
-
-                                </div>
-                           
-                        </div>
-                        <div class="col-1">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button mb-2" class="btn btn-primary">Guardar</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelarr</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
+        
         
         <!-- soft skills-->
 
@@ -561,13 +392,7 @@
                     <a (click)="selecSoftSkill(softskills)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#softskillsModal"><i
                             class="fa-solid fa-diagram-project"></i>{{softskills.nombre}}</a>
                 </li>
-                <!-- 
-                <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarSoftSkill">
-                    <li class="list-group-item">
-                        <i></i> + Agregar SoftSkill            
-                     </li>
-                 </a>
-                -->
+                
                 
             </div>
         </div>
@@ -610,8 +435,8 @@
     
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Guardar</button>
-                                            <button type="button" class="btn btn-danger">Eliminar</button>
+                                            <button type="submit" class="btn btn-primary" [disabled]="softskillsForm.invalid">Guardar</button>
+                                            <button type="button" class="btn btn-danger" (click)="onEliminaroftskill()">Eliminar</button>
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                         
                                         </div>
@@ -630,55 +455,7 @@
                 </div>
             </div>
         </div>
-          <!--Agregar soft modal
-    <div class="modal fade" id="agregarSoftSkill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar SoftSkill</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-1">
-
-                            </div>
-                            <div class="col-10">
-                                <form [formGroup]="softskillsForm" (ngSubmit)="onEnviarSoftSkill($event)">
-                                    <div class="mb-3">
-                                        <label for="agregarHabilidad" class="form-label">Ingrese Nombre o habilidad</label>
-                                        <input type="text" class="form-control" id="agregarHabilidad"
-                                            aria-describedby="emailHelp">
-
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="agregarPorcentaje" class="form-label">Ingrese porcentaje de progreso</label>
-                                        <input type="text" class="form-control" id="agregarPorcentaje" aria-describedby="emailHelp">
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Guardar</button>
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    
-                                    </div>
-                     
-                                </form>
-
-                                </div>
-                           
-                        </div>
-                        <div class="col-1">
-
-                        </div>
-                    </div>
-                </div>
-              
-            </div>
-        </div>
-    </div>
-    -->
+         
 
         <!--proyectos inicio colapsable -->
         <li class="list-group-item">
@@ -693,13 +470,7 @@
                     <a (click)="selecProyecto(proyecto)" class="link" href="#" data-bs-toggle="modal" data-bs-target="#proyectosModal"><i
                             class="fa-solid fa-diagram-project"></i>{{proyecto.titulo}}</a>
                 </li>
-                <!-- 
-                <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#agregarProyectoModal">
-                    <li class="list-group-item">
-                        <i></i> + Agregar proyecto            
-                     </li>
-                 </a>
-                 -->
+                
                 
                 
             </div>
@@ -719,7 +490,7 @@
                         <div class="mb-3">
                             <p class="text-danger"> --> Para agregar un nuevo proyecto dejar el ID en blanco - Para editar los datos actuales dejar el mismo ID</p>
                             
-                            <label for="idDeProyecto" class="form-label">Ingrese ID</label>
+                            <label for="idDeProyecto" class="form-label">ID</label>
                             <input type="text" formControlName="id" class="form-control" type="text" id="id" name="id">
                         </div>
                         <div class="mb-3">
@@ -741,7 +512,7 @@
                             <input type="text" formControlName="link_ver_mas" type="text" class="form-control" id="link_ver_mas" name="link_ver_mas" aria-describedby="emailHelp">
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-primary" [disabled]="proyectosForm.invalid">Guardar</button>
                             <button type="button" class="btn btn-danger" (click)="onEliminar()" >Eliminar</button>
                             
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -754,48 +525,4 @@
                 </div>
             </div>
         </div>
-        <!-- agregar proyecto modal
-        <div class="modal fade" id="agregarProyectoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Agregar proyecto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form [formGroup]="proyectosForm" (ngSubmit)="onEnviar($event)">
-    
-                        <div class="mb-3">
-                            <label for="idDeProyecto" class="form-label">Ingrese ID</label>
-                            <input type="text" class="form-control" type="text" id="id" name="id">
-                        </div>
-                        <div class="mb-3">
-                            <label for="imgProyecto" class="form-label">Ingrese ruta de la imagen</label>
-                            <input type="text" class="form-control" type="text" id="img_src" name="img_src">
-                        </div>
-                        <div class="mb-3">
-                            <label for="tituloProyecto" class="form-label">Ingrese título</label>
-                            <input type="text"  class="form-control" type="text" id="titulo" name="titulo">
-                        </div>
-                        <div class="mb-3 mt-4">
-                            <label for="descripcionProyecto" class="form-label">Ingrese descripcion</label>
-                            <input type="text" type="text" class="form-control" id="descripcion" name="descripcion" aria-describedby="emailHelp">
-                        </div>
-                        
-                        <div class="mb-3 mt-4">
-                            <label for="linkVerMasproyecto" class="form-label">Ingrese URL del link ver más</label>
-                            <input type="text" type="text" class="form-control" id="link_ver_mas" name="link_ver_mas" aria-describedby="emailHelp">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
-                            <button type="button" class="btn btn-danger">Eliminar</button>
-                            
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
-                    </form>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-        -->
+        

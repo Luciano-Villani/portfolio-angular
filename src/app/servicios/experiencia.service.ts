@@ -25,5 +25,8 @@ public experiencia: experienciaInterface | boolean = false;
     agregarExperiencia(body: any):Observable<any> {
       return this.http.put(this.url+"actualizar/experiencia", body);
   }
+  borrarExperiencia(id: number):Observable<any> { 
+    return this.http.delete(this.url + "experiencia/delete/" + id);
+}
 }
 

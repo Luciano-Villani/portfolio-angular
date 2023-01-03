@@ -25,4 +25,7 @@ public informacion: informacionInterface | boolean = false;
     agregarInformacion(body: any):Observable<any> {
       return this.http.put(this.url+"actualizar/informacion", body);
   }
+  borrarInformacion(id: number):Observable<any> { 
+    return this.http.delete(this.url + "informacion/delete/" + id);
+}
 }

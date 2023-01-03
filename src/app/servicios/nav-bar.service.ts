@@ -30,4 +30,7 @@ public redes: navbarInterface | boolean = false;
     agregarRed(body: any):Observable<any> {
       return this.http.put(this.url+"actualizar/red", body);
   }
+  borrarRed(id: number):Observable<any> { 
+    return this.http.delete(this.url + "redes/delete/" + id);
+}
 }

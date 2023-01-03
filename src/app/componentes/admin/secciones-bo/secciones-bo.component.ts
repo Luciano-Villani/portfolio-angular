@@ -22,7 +22,13 @@ export class SeccionesBOComponent implements OnInit {
   misSoftskillsBO: any;
   misProyectosBO: any;
   proyectoActual: any;
-  
+  softSkillActual: any;
+  hardSkillActual: any;
+  formacionActual: any;
+  experienciaActual: any;
+ // informacionActual: any;
+  redActual: any;
+
   experienciaForm: FormGroup;
   redesForm: FormGroup;
   infoForm: FormGroup;
@@ -57,10 +63,10 @@ export class SeccionesBOComponent implements OnInit {
     });
     this.infoForm = this.formBuilder.group({
       id: [''],
-      linea1: ['', [Validators.required]],
-      linea2: ['', [Validators.required]],
-      linea3: ['', [Validators.required]],
-      linea4: ['', [Validators.required]],
+      linea1: [''],
+      linea2: [''],
+      linea3: [''],
+      linea4: [''],
       
       
     });
@@ -134,6 +140,7 @@ export class SeccionesBOComponent implements OnInit {
 
 selecRed(redes:any){
   console.log(redes);
+  this.redActual = redes;
   this.redesForm.setValue({
     id: redes.id,
     urlDestino: redes.urlDestino,
@@ -143,6 +150,7 @@ selecRed(redes:any){
 }
 selecExp(experiencias:any){
   console.log(experiencias);
+  this.experienciaActual = experiencias;
   
   this.experienciaForm.setValue({
     id: experiencias.id,
@@ -155,6 +163,7 @@ selecExp(experiencias:any){
 }
 selecInfo(informacion:any){
   console.log(informacion);
+ // this.informacionActual = informacion;
   
   this.infoForm.setValue({
     id: informacion.id,
@@ -167,6 +176,7 @@ selecInfo(informacion:any){
 }
 selecFormacion(formacion:any){
   console.log(formacion);
+  this.formacionActual = formacion;
   
   this.formacionForm.setValue({
     id: formacion.id,
@@ -179,6 +189,7 @@ selecFormacion(formacion:any){
 }
 selecHardSkill(hardskill:any){
   console.log(hardskill);
+  this.hardSkillActual = hardskill;
   
   this.hardskillsForm.setValue({
     id: hardskill.id,
@@ -191,6 +202,8 @@ selecHardSkill(hardskill:any){
 }
 selecSoftSkill(softskill:any){
   console.log(softskill);
+
+  this.softSkillActual = softskill;
   
   this.softskillsForm.setValue({
     id: softskill.id,
@@ -229,6 +242,12 @@ onEnviar(event:Event)
   this.datosProyectos.agregarProyecto(this.proyectosForm.value).subscribe(data=>{
     //console.log("DATA" + JSON.stringify(data));
     console.log(data);
+    if (this.proyectosForm.valid){
+      alert("Datos Guardados");
+      window.location.reload()
+    } else {
+      alert("Error")
+    }
 
   })
 
@@ -239,9 +258,16 @@ onEliminar()
 
 {
   
-  this.datosProyectos.borrarProyecto(this.proyectoActual.id); {
+  this.datosProyectos.borrarProyecto(this.proyectoActual.id).subscribe(data=>{
+    console.log(data);
+    if (this.proyectosForm.valid){
+      alert("Registro borrado correctamente");
+      window.location.reload()
+    } else {
+      alert("Error")
+    }
     
-  }
+  })
 
 }
 
@@ -261,11 +287,35 @@ onEliminar()
  this.datosSoftskills.agregarSoftSkill(this.softskillsForm.value).subscribe(data=>{
    //console.log("DATA" + JSON.stringify(data));
    console.log(data);
+   if (this.softskillsForm.valid){
+    alert("Datos guardados correctamente");
+    window.location.reload()
+  } else {
+    alert("Error")
+  }
 
  })
 
  
 }
+
+onEliminaroftskill()
+
+{
+  
+  this.datosSoftskills.borrarSoftSkill(this.softSkillActual.id).subscribe(data=>{
+    console.log(data);
+    if (this.softskillsForm.valid){
+      alert("Registro borrado correctamente");
+      window.location.reload()
+    } else {
+      alert("Error")
+    }
+    
+  })
+
+}
+
 onEnviarHardSkill(event:Event)
 
 
@@ -274,10 +324,32 @@ onEnviarHardSkill(event:Event)
  this.datosHardskills.agregarHardSkill(this.hardskillsForm.value).subscribe(data=>{
    //console.log("DATA" + JSON.stringify(data));
    console.log(data);
+   if (this.hardskillsForm.valid){
+    alert("Datos guardados correctamente");
+    window.location.reload()
+  } else {
+    alert("Error")
+  }
 
  })
 
  
+}
+onEliminarHardskill()
+
+{
+  
+  this.datosHardskills.borrarHardSkill(this.hardSkillActual.id).subscribe(data=>{
+    console.log(data);
+    if (this.hardskillsForm.valid){
+      alert("Registro borrado correctamente");
+      window.location.reload()
+    } else {
+      alert("Error")
+    }
+    
+  })
+
 }
 onEnviarFormacion(event:Event)
 
@@ -287,10 +359,32 @@ onEnviarFormacion(event:Event)
  this.datosFormacion.agregarFormacion(this.formacionForm.value).subscribe(data=>{
    //console.log("DATA" + JSON.stringify(data));
    console.log(data);
+   if (this.formacionForm.valid){
+    alert("Datos guardados correctamente");
+    window.location.reload()
+  } else {
+    alert("Error")
+  }
 
  })
 
 }
+onEliminarFormacion()
+
+{
+  
+  this.datosFormacion.borrarFormacion(this.formacionActual.id).subscribe(data=>{
+    console.log(data);
+    if (this.formacionForm.valid){
+      alert("Registro borrado correctamente");
+      window.location.reload()
+    } else {
+      alert("Error")
+    }
+    
+  })
+}
+
 onEnviarExperiencia(event:Event)
 
 
@@ -299,8 +393,29 @@ onEnviarExperiencia(event:Event)
  this.datosExperiencia.agregarExperiencia(this.experienciaForm.value).subscribe(data=>{
    //console.log("DATA" + JSON.stringify(data));
    console.log(data);
+   if (this.experienciaForm.valid){
+    alert("Datos guardados correctamente");
+    window.location.reload()
+  } else {
+    alert("Error")
+  }
 
  })
+}
+onEliminarExperiencia()
+
+{
+  
+  this.datosExperiencia.borrarExperiencia(this.experienciaActual.id).subscribe(data=>{
+    console.log(data);
+    if (this.experienciaForm.valid){
+      alert("Registro borrado correctamente");
+      window.location.reload()
+    } else {
+      alert("Error")
+    }
+    
+  })
 }
 onEnviarInformacion(event:Event)
 
@@ -310,9 +425,30 @@ onEnviarInformacion(event:Event)
  this.datosInfo.agregarInformacion(this.infoForm.value).subscribe(data=>{
    //console.log("DATA" + JSON.stringify(data));
    console.log(data);
+   if (this.infoForm.valid){
+    alert("Datos guardados correctamente");
+    window.location.reload()
+  } else {
+    alert("Error")
+  }
 
  })
 }
+//onEliminarInformacion()
+
+//{
+  
+ // this.datosInfo.borrarInformacion(this.informacionActual.id).subscribe(data=>{
+ //   console.log(data);
+  //  if (this.infoForm.valid){
+ //     alert("Registro borrado correctamente");
+  //    window.location.reload()
+  //  } else {
+  //    alert("Error")
+  //  }
+    
+ // })
+//}
 onEnviarRed(event:Event)
 
 
@@ -321,8 +457,30 @@ onEnviarRed(event:Event)
  this.datosRedes.agregarRed(this.redesForm.value).subscribe(data=>{
    //console.log("DATA" + JSON.stringify(data));
    console.log(data);
+   if (this.redesForm.valid){
+    alert("Datos guardados correctamente");
+    window.location.reload()
+  } else {
+    alert("Error")
+  }
 
  })
+
+ }
+ onEliminarRed()
+
+{
+  
+  this.datosRedes.borrarRed(this.redActual.id).subscribe(data=>{
+    console.log(data);
+    if (this.redesForm.valid){
+      alert("Registro borrado correctamente");
+      window.location.reload()
+    } else {
+      alert("Error")
+    }
+    
+  })
 }
 }
 

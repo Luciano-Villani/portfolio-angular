@@ -25,6 +25,9 @@ public softskills: skillsInterface | boolean = false;
     agregarSoftSkill(body: any):Observable<any> {
       return this.http.put(this.url+"actualizar/softskill", body);
   }
+  borrarSoftSkill(id: number):Observable<any> { 
+    return this.http.delete(this.url + "softskill/delete/" + id);
+}
 
 }
 

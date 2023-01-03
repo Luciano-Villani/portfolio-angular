@@ -26,6 +26,9 @@ public hardskills: skillsInterface | boolean = false;
     agregarHardSkill(body: any):Observable<any> {
       return this.http.put(this.url+"actualizar/hardskill", body);
   }
+  borrarHardSkill(id: number):Observable<any> { 
+    return this.http.delete(this.url + "hardskill/delete/" + id);
+}
 }
 
 

@@ -30,7 +30,7 @@ public proyectos: proyectosInterface | boolean = false;
 
     
      borrarProyecto(id: number):Observable<any> { 
-            return this.http.post(this.url + "proyecto/delete" , id);
+            return this.http.delete(this.url + "proyecto/delete/" + id);
     }
 
 
