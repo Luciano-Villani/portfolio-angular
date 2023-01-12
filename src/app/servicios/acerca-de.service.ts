@@ -7,7 +7,7 @@ import { informacionInterface } from 'src/assets/data/informacionInterface';
   providedIn: 'root'
 })
 export class AcercaDeService {
-  url:string="http://localhost:8080/"
+  url:string="https://luciano-villani-portfolio-backend.onrender.com/"
 
   constructor(private http:HttpClient) { }
   obtenerDatos():Observable<informacionInterface>{

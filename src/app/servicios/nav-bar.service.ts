@@ -11,7 +11,7 @@ export class NavBarService {
  
  
   
-  url:string="http://localhost:8080/"
+  url:string="https://luciano-villani-portfolio-backend.onrender.com/"
 
   constructor(private http:HttpClient) { }
   obtenerDatos():Observable<navbarInterface[]>{

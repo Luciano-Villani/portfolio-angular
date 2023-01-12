@@ -7,7 +7,7 @@ import { skillsInterface } from 'src/assets/data/skillsInterface';
   providedIn: 'root'
 })
 export class SoftSkillsService {
-  url:string="http://localhost:8080/"
+  url:string="https://luciano-villani-portfolio-backend.onrender.com/"
 
   constructor(private http:HttpClient) { }
   obtenerDatos():Observable<any>{

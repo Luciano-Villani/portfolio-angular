@@ -6,7 +6,7 @@ import { formacionInterface } from 'src/assets/data/formacionInterface';
   providedIn: 'root'
 })
 export class FormacionService {
-  url:string="http://localhost:8080/"
+  url:string="https://luciano-villani-portfolio-backend.onrender.com/"
 
   constructor(private http:HttpClient) { }
   obtenerDatos():Observable<any>{

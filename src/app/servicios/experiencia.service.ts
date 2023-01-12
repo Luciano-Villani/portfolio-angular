@@ -7,7 +7,7 @@ import { experienciaInterface } from 'src/assets/data/experienciaInterface';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  url:string="http://localhost:8080/"
+  url:string="https://luciano-villani-portfolio-backend.onrender.com/"
 
   constructor(private http:HttpClient) { }
   obtenerDatos():Observable<experienciaInterface>{

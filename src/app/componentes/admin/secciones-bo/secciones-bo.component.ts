@@ -26,7 +26,7 @@ export class SeccionesBOComponent implements OnInit {
   hardSkillActual: any;
   formacionActual: any;
   experienciaActual: any;
- // informacionActual: any;
+  informacionActual: any;
   redActual: any;
 
   experienciaForm: FormGroup;
@@ -163,7 +163,8 @@ selecExp(experiencias:any){
 }
 selecInfo(informacion:any){
   console.log(informacion);
- // this.informacionActual = informacion;
+
+ this.informacionActual = informacion;
   
   this.infoForm.setValue({
     id: informacion.id,
